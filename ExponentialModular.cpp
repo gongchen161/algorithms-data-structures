@@ -21,5 +21,6 @@ int main() {
     
     std::cout<<exp_mod(2, 5, 7)<<std::endl;  //2^5 %7
     std::cout<<exp_mod(3243, 231, 21321)<<std::endl;
+    
     return 0;
 }
