@@ -19,8 +19,6 @@ void sieve(int N) {
     }
 }
 
-
-
 int main(){
     
     auto Print = [](){
