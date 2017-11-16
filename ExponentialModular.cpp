@@ -13,6 +13,7 @@ T exp_mod(T x, T p, T d){
         x = (x*x)%d;
         p /= 2;
     }
+    
     return ans;
 }
 
