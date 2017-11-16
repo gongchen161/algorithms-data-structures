@@ -13,6 +13,7 @@ T GCD(T a, T b){
 
 
 int main(){
+    
     std::cout<<GCD(10,50)<<std::endl;
     std::cout<<GCD(1,78)<<std::endl;
     std::cout<<GCD(24,64)<<std::endl;
