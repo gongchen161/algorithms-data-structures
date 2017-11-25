@@ -4,7 +4,7 @@
 
 using T = long long;
 
-T exp_mod(T x, T p, T d){
+T ExpMod(T x, T p, T d){
     T ans = 1;
     
     while(p > 0){
@@ -19,8 +19,8 @@ T exp_mod(T x, T p, T d){
 
 int main() {
     
-    std::cout<<exp_mod(2, 5, 7)<<std::endl;  //2^5 %7
-    std::cout<<exp_mod(3243, 231, 21321)<<std::endl;
+    std::cout<<ExpMod(2, 5, 7)<<std::endl;  //2^5 %7
+    std::cout<<ExpMod(3243, 231, 21321)<<std::endl;
     
     return 0;
 }

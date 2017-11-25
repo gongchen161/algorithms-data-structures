@@ -5,7 +5,7 @@
 
 std::vector<bool>isPrime;
 
-void sieve(int N) {
+void SievePrime(int N) {
     isPrime = std::vector<bool>(N+1, true);
 
     isPrime[0] = false;
@@ -30,13 +30,13 @@ int main(){
         std::cout<<std::endl;
     };
     
-    sieve(10);
+    SievePrime(10);
     Print();
     
-    sieve(100);
+    SievePrime(100);
     Print();
     
-    sieve(1000);
+    SievePrime(1000);
     Print();
     
 }
