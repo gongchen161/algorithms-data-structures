@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector< vector<int> > GeneratePermutations(const vector<int>& v){
+vector< vector<int> > GenerateSubsets(const vector<int>& v){
 
 	int N = (1<<v.size());
 	vector< vector<int> > permutations(N);
@@ -33,6 +33,6 @@ void Print2DVector(const vector< vector<T> >& v){
 int main(){
 
 	vector<int> v{1,2,3,4,5};
-	vector< vector<int> > p = GeneratePermutations(v);
+	vector< vector<int> > p = GenerateSubsets(v);
 	Print2DVector(p);
 }
