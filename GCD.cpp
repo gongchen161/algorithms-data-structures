@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-using T = int;
+using T = long long;
 
 T GCD(T a, T b){
     if(b == T(0))
