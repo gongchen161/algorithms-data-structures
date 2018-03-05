@@ -19,7 +19,7 @@ public:
     bool isSameSet(int i, int j) {
         return findSet(i) == findSet(j);
     }
-    void unionSet(int i, int j) {
+    void unionTwo(int i, int j) {
         int x = findSet(i);
         int y = findSet(j);
         
