@@ -3,7 +3,7 @@
 
 
 //edgeList: sorted edge list with <weight, (v1, v2)>
-int minimumSpaningTree(const vector< pair<int, pair<int,int> >>& edgeList, int nVertex, int nEdge) {
+int kruskalMST(const vector< pair<int, pair<int,int> >>& edgeList, int nVertex, int nEdge) {
     
     int minCost = 0;
     UnionSet uSet(nVertex);
