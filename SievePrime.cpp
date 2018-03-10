@@ -6,6 +6,7 @@
 std::vector<bool>isPrime;
 
 void sievePrime(int N) {
+    
     isPrime = std::vector<bool>(N+1, true);
 
     isPrime[0] = false;
