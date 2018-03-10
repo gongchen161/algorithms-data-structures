@@ -2,6 +2,7 @@
 
 #include <iostream>
 
+
 using T = long long;
 
 T ExpMod(T x, T p, T d){
