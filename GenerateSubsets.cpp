@@ -1,4 +1,4 @@
-//Find all the 
+//Find all the Subsets of a vector
 #include <iostream>
 #include <vector>
 
@@ -17,6 +17,7 @@ vector< vector<int> > GenerateSubsets(const vector<int>& v){
 
 	return permutations;
 }
+
 
 template<typename T>
 void Print2DVector(const vector< vector<T> >& v){
