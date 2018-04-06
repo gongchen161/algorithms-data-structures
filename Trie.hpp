@@ -22,7 +22,7 @@ public:
         TrieNode* cur = _root;
         _root->_count++;
         for (int i = 0; i<s.size(); i++) {
-            if (cur->_child[s[i]] == nullptr) {
+            if (!cur->_child[s[i]]) {
                 cur->_child[s[i]] = new TrieNode();
             }
             cur->_child[s[i]]->_count++;
@@ -36,8 +36,8 @@ public:
         TrieNode* cur = _root;
         for (int i = 0; i<s.size(); i++) {
             cur = cur->_child[s[i]];
-            if (cur == nullptr)
-            return 0;
+            if (!cur)
+                return 0;
         }
 
         return cur->_count;
