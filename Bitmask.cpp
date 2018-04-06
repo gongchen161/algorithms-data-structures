@@ -30,6 +30,7 @@ int main() {
     int n = 4;  //bitsize of i1
     int i9 = (1 << n) - 1;
     
+    
     std::cout << i1 << std::endl;
     std::cout << i2 << std::endl;
     std::cout << i3 << std::endl;
