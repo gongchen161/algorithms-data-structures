@@ -1,9 +1,8 @@
 #include <vector>
-using namespace std;
 
 class UnionSet {
 public:
-    UnionSet(int n) : _rank(vector<int>(n, 0)) {
+    UnionSet(int n) : _rank(n, 0) {
         _parent.resize(n);
         for (int i = 0; i < n; i++) {
             _parent[i] = i;
@@ -38,6 +37,6 @@ public:
         }
     }
 private:
-    vector<int> _parent;
-    vector<int> _rank;
+    std::vector<int> _parent;
+    std::vector<int> _rank;
 };
