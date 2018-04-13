@@ -26,12 +26,9 @@ public:
             carry = cur / 10;
             i1++;
             i2++;
-            
-            std::cout <<result <<" " << cur << std::endl;
         }
         
         while (i1 != _num.rend()) {
-            std::cout <<result << std::endl;
             short cur = *i1 - '0' + carry;
             short add = cur % 10;
             result += ('0' + add);
@@ -40,7 +37,6 @@ public:
         }
         
         while (i2 != rhs._num.rend()) {
-            std::cout <<result << std::endl;
             short cur = *i2 - '0' + carry;
             short add = cur % 10;
             result += ('0' + add);
@@ -56,16 +52,37 @@ public:
         
         return BigNumber(result);
     }
+    
+    BigNumber& operator += (const BigNumber& rhs) {
+        *this = *this + rhs;
+        return *this;
+    }
+    
+    BigNumber operator * (const BigNumber& rhs) const {
+        BigNumber result;
+        int numZero = 0;
+        for(auto it1 = rhs._num.rbegin(); it1 != rhs._num.rend(); it1++) {
+            short carry = 0;
+            std::string curResult(numZero++, '0');
+            for(auto it2 = _num.rbegin(); it2 != _num.rend(); it2++) {
+                short cur = (*it1 - '0') * (*it2 - '0') + carry;
+                short add = cur % 10;
+                curResult += ('0' + add);
+                carry = cur / 10;
+
+            }
+            
+            if (carry > 0) {
+                curResult += ('0' + carry);
+            }
+            
+            std::reverse(curResult.begin(), curResult.end());
+            
+            result += BigNumber(curResult);
+        }
+        return result;
+    }
 
 private:
     std::string _num;
 };
-
-int main() {
-    
-    BigNumber b1("9999");
-    BigNumber b2("1111");
-    
-    std::cout << b1 + b2 << std::endl;
-    
-}
