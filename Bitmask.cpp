@@ -1,44 +1,51 @@
 #include <iostream>
 
 int main() {
-    //This section will include some of the most common bitwise operations
+    // This section includes some common bitwise operations
     
-    int i1 = 8;
+
+    // Multiply by 2
+    assert(8 << 1 == 16);
     
-    //Multiply by 2
-    int i2 = i1 << 1;
+    // Divide by 4
+    assert(16 >> 2 == 4);
     
-    //Divide by 4
-    int i3 = i2 >> 2;
+    // Set 2nd bit on
+    // 1001 -> 1101 ==> 9 -> 13
+    assert((9 | (1 << 2)) == 13);
     
-    //set 2nd bit on
-    int i4 = (i1 | (1 << 2));
+    // Check if the 2nd bit is on
+    // 1000 ==> false
+    assert((8 & (1 << 2)) == 0);
+    // 1100 ==> true
+    assert((12 & (1 << 2)) != 0);
+
+    // Clear the 2nd bit
+    // 1111 -> 1011 
+    assert((15 & (~(1 << 2))) == 11);
     
-    //check if the 2nd bit is on
-    int i5 = (i1 & (1 << 2));
+    // Flip the 2nd bit
+    // 1101 -> 1001 
+    assert((13 ^ (1 << 2)) == 9);
     
-    //clear the 2nd bit
-    int i6 = (i1 & (~(1 << 2)));
-    
-    //flip the 2nd bit
-    int i7 = (i1 ^ (1 << 2));
-    
-    //get the first bit on (from right to left)
-    int i8 = (i1 & -i1);
-    
-    //set all bit on
-    int n = 4;  //bitsize of i1
-    int i9 = (1 << n) - 1;
-    
-    
-    std::cout << i1 << std::endl;
-    std::cout << i2 << std::endl;
-    std::cout << i3 << std::endl;
-    std::cout << i4 << std::endl;
-    std::cout << i5 << std::endl;
-    std::cout << i6 << std::endl;
-    std::cout << i7 << std::endl;
-    std::cout << i8 << std::endl;
-    std::cout << i9 << std::endl;
-    
+    // Get the first bit that is on (least significant -- from right to left)
+    // 1100 -> 2nd bit on -> 4
+    assert((12 & -12) == 4);
+    // 1101 -> 0th bit on -> 1
+    assert((13 & -13) == 1);
+    // 1000 -> 3rd bit on -> 1
+    assert((8 & -8) == 8);
+
+    // Set all bits on
+    // 1111
+    assert((1 << 4) - 1 == 15);
+
+    // Other bit-related logics
+    // a ^ a = 0
+    // a ^ 0 = a
+    for (int i = 0; i < 100; i++) {
+        assert(i ^ i == 0);
+        assert(i ^ 0 == i);
+    }
+   
 }
