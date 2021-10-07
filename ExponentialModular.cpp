@@ -1,10 +1,10 @@
-//Find (x^y) % d for any large or small numbers
-
 #include <iostream>
 
 
 using T = long long;
 
+
+//Find (x^y) % d for any large/small numbers
 T ExpMod(T x, T p, T d){
     T ans = 1;
     
@@ -19,9 +19,9 @@ T ExpMod(T x, T p, T d){
 }
 
 int main() {
-    
-    std::cout<<ExpMod(2, 5, 7)<<std::endl;  //2^5 %7
-    std::cout<<ExpMod(3243, 231, 21321)<<std::endl;
+    assert(ExpMod(2, 5, 7) == 4); // ( 2 ^ 5 ) % 7
+    assert(ExpMod(3456, 789, 123456789) == 66221163);
+    assert(ExpMod(987654321, 123, 1e9+7) == 328320105);
     
     return 0;
 }
