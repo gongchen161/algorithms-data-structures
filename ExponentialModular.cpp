@@ -5,7 +5,7 @@ using T = long long;
 
 
 //Find (x^y) % d for any large/small numbers
-T ExpMod(T x, T p, T d){
+T expMod(T x, T p, T d){
     T ans = 1;
     
     while(p > 0){
@@ -19,9 +19,9 @@ T ExpMod(T x, T p, T d){
 }
 
 int main() {
-    assert(ExpMod(2, 5, 7) == 4); // ( 2 ^ 5 ) % 7
-    assert(ExpMod(3456, 789, 123456789) == 66221163);
-    assert(ExpMod(987654321, 123, 1e9+7) == 328320105);
+    assert(expMod(2, 5, 7) == 4); // ( 2 ^ 5 ) % 7
+    assert(expMod(3456, 789, 123456789) == 66221163);
+    assert(expMod(987654321, 123, 1e9+7) == 328320105);
     
     return 0;
 }
