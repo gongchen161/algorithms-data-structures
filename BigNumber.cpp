@@ -2,9 +2,9 @@
 #include <string>
 #include <algorithm>
 
-/**
-    For adding and multiplying unsigned numbers that are bigger than ULLONG_MAX (2^64)
-*/
+
+
+// For adding and multiplying unsigned numbers that are bigger than ULLONG_MAX (2^64)
 class BigNumber {
     // print a big number
     friend std::ostream& operator <<(std::ostream& os, const BigNumber& bn) {
