@@ -2,7 +2,7 @@
 
 using T = long long;
 
-//Greatest Common Divisor
+// Greatest Common Divisor
 T gcd(T a, T b){
     if(b == 0)
         return a;
@@ -10,23 +10,21 @@ T gcd(T a, T b){
     return gcd(b, a%b);
 }
 
-//Least Common Multiple
+// Least Common Multiple
 T lcm(T a, T b) {
     return a * (b / gcd(a, b));
 }
 
 
 int main(){
-    
-    std::cout<<gcd(10,50)<<std::endl;
-    std::cout<<gcd(1,78)<<std::endl;
-    std::cout<<gcd(24,64)<<std::endl;
-    std::cout<<gcd(13, 47)<<std::endl;
-    
-    std::cout<<lcm(10,50)<<std::endl;
-    std::cout<<lcm(1,78)<<std::endl;
-    std::cout<<lcm(24,64)<<std::endl;
-    std::cout<<lcm(13, 47)<<std::endl;
+
+    assert(gcd(1, 42) == 1);    
+    assert(gcd(10, 50) == 10);
+    assert(gcd(13, 47) == 1);
+
+    assert(lcm(1, 42) == 42);
+    assert(lcm(10, 50) == 50);
+    assert(lcm(13, 47) == 13 * 47);
     
     return 0;
 }
