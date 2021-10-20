@@ -6,11 +6,11 @@ using namespace std;
 
 //Find all 2^N Subsets of a vector
 vector< vector<int> > generateSubsets(const vector<int>& v){
-
+	
 	int N = (1<<v.size()); // 2^N
 	vector< vector<int> > permutations(N);
 	for(int i = 0; i < N; i++){
-		for(int j = 0; j < N; j++){
+		for(int j = 0; j < v.size(); j++){
 			// if jth bit is set in i
 			if(i & (1 << j)) permutations[i].push_back(v[j]);
 		}
