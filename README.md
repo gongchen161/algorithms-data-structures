@@ -1,2 +1,2 @@
-# Algorithm-DataStructure
-Some common and useful algorithms and data structures that I have used in competetive programming
+# Algorithms & Data Structures
+- Some advanced and interesting algorithms & data structures that are useful to learn

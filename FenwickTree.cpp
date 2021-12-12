@@ -10,9 +10,6 @@ public:
         for (int i = 0; i < v.size(); i++) {
             update(i, v[i]);
         }
-        for( int x : tree) {
-            std::cout << x << std::endl;
-        }
     }
 
     int sum(int left, int right) {
@@ -50,7 +47,7 @@ private:
 int main() {
 
 
-    std::vector<int> vec = {23, 4, 2, 18, 15, 20, 11};
+    std::vector<int> vec = {23, 4, 2, 18, 15, 20, 11, 88};
     FenwickTree st(vec);
    
     assert(st.sum(0, 6) == 93);
