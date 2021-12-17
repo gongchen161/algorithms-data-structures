@@ -90,7 +90,7 @@ public:
         return result;
     }
 
-    std::string toString() {
+    std::string toString() const {
         return num_;
     }
 
