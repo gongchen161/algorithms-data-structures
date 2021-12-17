@@ -12,7 +12,7 @@ public:
         }
     }
 
-    int sum(int left, int right) {
+    int sum(int left, int right) const {
         return sum(right + 1) - sum(left);
     }
 
@@ -24,7 +24,7 @@ public:
 
 
 private:
-    int sum(int idx) {
+    int sum(int idx) const {
         if (idx <= 0) {
             return 0;
         }
@@ -37,7 +37,7 @@ private:
         }
     }
 
-    int LSB(int x) { return x & -x; }
+    int LSB(int x) const { return x & -x; }
 
     std::vector<int> tree;
     std::vector<int> vals;

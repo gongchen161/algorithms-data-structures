@@ -11,7 +11,7 @@ public:
         buildTree(1, 0, n -1);
     }
 
-    int sum(int left, int right) {
+    int sum(int left, int right) const {
         return sum(1, 0, vals.size()-1, left, right);
     }
     int update(int idx, int newVal) {
@@ -31,7 +31,7 @@ private:
             update(rightIdx(idx), mid + 1, segmentRight, targetIdx, diff);
         }
     }
-    int sum(int idx, int segmentLeft, int segmentRight, int queryLeft, int queryRight) {
+    int sum(int idx, int segmentLeft, int segmentRight, int queryLeft, int queryRight) const {
         if (queryLeft <= segmentLeft && queryRight >= segmentRight) return sums[idx];
         if (queryLeft > segmentRight || queryRight < segmentLeft) return 0;
         int mid = segmentLeft + (segmentRight-segmentLeft) / 2;
@@ -47,8 +47,8 @@ private:
             sums[idx] = sums[leftIdx(idx)] + sums[rightIdx(idx)];
         }
     }
-    int leftIdx(int idx) {return idx * 2; }
-    int rightIdx(int idx) { return idx * 2 + 1; }
+    int leftIdx(int idx) const {return idx * 2; }
+    int rightIdx(int idx) const { return idx * 2 + 1; }
     std::vector<int> sums;
     std::vector<int> vals;
 };
