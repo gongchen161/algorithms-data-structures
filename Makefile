@@ -1,22 +1,22 @@
-all: BigNumber.o Bitmask.o FenwickTree.o SegmentTree.o
+all: BigNumber Bitmask FenwickTree SegmentTree
 
-BigNumber.o: BigNumber.cpp
-	g++ -c BigNumber.cpp -std=c++17
+BigNumber: BigNumber.cpp
+	g++ BigNumber.cpp -std=c++17 -o BigNumber.out
 
-Bitmask.o: Bitmask.cpp
-	g++ -c Bitmask.cpp -std=c++17
+Bitmask: Bitmask.cpp
+	g++ Bitmask.cpp -std=c++17 -o Bitmask.out
 
-FenwickTree.o: FenwickTree.cpp
-	g++ -c FenwickTree.cpp -std=c++17
+FenwickTree: FenwickTree.cpp
+	g++ FenwickTree.cpp -std=c++17 -o FenwickTree.out
 
-SegmentTree.o: SegmentTree.cpp
-	g++ -c SegmentTree.cpp -std=c++17
+SegmentTree: SegmentTree.cpp
+	g++ SegmentTree.cpp -std=c++17 -o SegmentTree.out
 
-test:
-	./BigNumber
-	./Bitmask
-	./FenwickTree
-	./SegmentTree
+test: 
+	./BigNumber.out
+	./Bitmask.out
+	./FenwickTree.out
+	./SegmentTree.out
 
 clean:
-	rm *.o
+	rm *.out
