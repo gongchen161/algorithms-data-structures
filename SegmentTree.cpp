@@ -73,5 +73,5 @@ int main() {
     assert(st.sum(0, 5) == 92);
     assert(st.sum(1, 5) == 69);
     assert(st.sum(2, 4) == 45);
-    assert(st.sum(3, 3) == 18);
+    assert(st.sum(3, 3) == 182);
 }
