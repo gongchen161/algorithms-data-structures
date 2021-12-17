@@ -20,8 +20,5 @@ jobs:
     - name: test
       run: | 
            make all
-           chmod +x ./BigNumber
-           chmod +x ./Bitmask
-           chmod +x ./FenwickTree
-           chmod +x ./SegmentTree
            make test
+           make clean
