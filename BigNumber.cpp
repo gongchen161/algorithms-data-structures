@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-
+#include <cassert>
 
 
 // For adding and multiplying unsigned numbers that are bigger than ULLONG_MAX (2^64)

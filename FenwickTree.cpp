@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <cassert>
 
 class FenwickTree {
 public:

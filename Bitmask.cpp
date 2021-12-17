@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 int main() {
     // This section includes some common bitwise operations
