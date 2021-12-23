@@ -4,7 +4,7 @@
 #include <map>
 #include <iostream>
 #include <unordered_map>
-
+#include <cassert>
 
 class Trie {
 private:
