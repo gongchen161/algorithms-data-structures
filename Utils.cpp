@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <cassert>
 
 using namespace std;
 
@@ -65,8 +67,33 @@ void print2DVector(const vector< vector<T> >& v){
 
 int main(){
 
-	vector<int> v{1,2,3,4,5};
-	print2DVector( generateSubsets(v) );
+	vector<int> v{1,2, 3};
 
-	print2DVector( generateSubsetsBacktrack(v) );
+	vector<vector<int>> ans { 
+		{},
+		{1},
+		{1, 2},
+		{1, 2, 3},
+		{1, 3},
+		{2},
+		{2, 3},
+		{3},
+	};
+
+	vector<vector<int>> subsetResult1 = generateSubsets(v);
+	vector<vector<int>> subsetResult2 = generateSubsetsBacktrack(v);
+	
+	sort(subsetResult1.begin(), subsetResult1.end());
+	sort(subsetResult2.begin(), subsetResult2.end());
+	assert(subsetResult1.size() == ans.size());
+	assert(subsetResult2.size() == ans.size());
+
+
+	for (int i = 0; i < ans.size(); i++) {
+		assert(subsetResult1[i].size() == ans[i].size());
+		assert(subsetResult2[i].size() == ans[i].size());
+		assert(equal(ans.begin(), ans.end(), subsetResult1.begin()));
+		assert(equal(ans.begin(), ans.end(), subsetResult2.begin()));
+	}
+
 }
