@@ -44,21 +44,31 @@ vector<int> kmpStringMatching(const string& s, const string& p) {
 
 int main() {
     
-    
-    string s;
-    string p;
-    
-    getline(cin, s);
-    getline(cin, p);
+    vector<int> res = kmpStringMatching("aaababbab", "ab");
 
-    
-    vector<int> res = kmpStringMatching(s,p);
-    
-    cout << "KMP search result : ";
-    for (auto it = res.begin(); it != res.end(); ++it) {
-        cout << *it <<" ";
-    }
-    cout << endl;
-    
+    assert(res.size() == 3);
+    assert(res[0] == 2);
+    assert(res[1] == 4);
+    assert(res[2] == 7);
+
+    res = kmpStringMatching("abababababa", "aba");
+
+    assert(res.size() == 5);
+    assert(res[0] == 0);
+    assert(res[1] == 2);
+    assert(res[2] == 4);
+    assert(res[3] == 6);
+    assert(res[4] == 8);
+
+
+    res = kmpStringMatching("abababababa", "c");
+
+    assert(res.size() == 0);
+
+    res = kmpStringMatching("abcdefg", "abcdefg");
+
+    assert(res.size() == 1);
+    assert(res[0] == 0);
+
     return 0;
 }
