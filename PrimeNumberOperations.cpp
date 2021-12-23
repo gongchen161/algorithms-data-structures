@@ -69,25 +69,38 @@ vector<T> primePowerFactor(T N) {
 }
 int main(){
     
-    auto Print = [](const vector<T>& v){
-        for(int i=0; i<v.size(); i++){
-            std::cout<<v[i]<<" ";
+    
+    auto verifyVectorResult = [] (const vector<T>& expected, const vector<T>& actual) {
+        assert(expected.size() == actual.size());
+        
+        for (size_t i = 0; i < expected.size(); i++) {
+            assert(expected[i] == actual[i]);
         }
-        std::cout<<std::endl;
     };
-    
-    fillPrime(10);
-    Print(primes);
-    
+
     fillPrime(100);
-    Print(primes);
-    
-    fillPrime(2000);
-    Print(primes);
-    
-    
-    Print(primePowerFactor(100));
-    Print(primePowerFactor(13));
-    Print(primePowerFactor(1000));
+    verifyVectorResult(
+        vector<T>{2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97},
+        primes);
+
+    verifyVectorResult(
+       vector<T>{2, 2, 5, 5}, // 100 = 2 * 2 * 5 * 5
+       primePowerFactor(100)
+    );
+
+    verifyVectorResult(
+       vector<T>{13},
+       primePowerFactor(13)
+    );
+
+    verifyVectorResult(
+       vector<T>{2},
+       primePowerFactor(2)
+    );
+
+    verifyVectorResult(
+       vector<T>{2, 2, 3, 5, 5}, // 100 = 2 * 2 * 5 * 5
+       primePowerFactor(300)
+    );
     
 }
