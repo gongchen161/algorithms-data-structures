@@ -1,4 +1,4 @@
-all: BigNumber Bitmask Dijkstra ExponentialModular FenwickTree GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Util
+all: BigNumber Bitmask Dijkstra ExponentialModular FenwickTree GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Utils
 
 BigNumber: BigNumber.cpp
 	g++ BigNumber.cpp -std=c++17 -o BigNumber.out
@@ -33,8 +33,8 @@ Trie: Trie.cpp
 UnionFind: UnionFind.cpp
 	g++ UnionFind.cpp -std=c++17 -o UnionFind.out
 
-Util: Util.cpp
-	g++ Util.cpp -std=c++17 -o Util.out
+Utils: Utils.cpp
+	g++ Utils.cpp -std=c++17 -o Utils.out
 
 test: 
 	./BigNumber.out
@@ -48,7 +48,7 @@ test:
 	./SegmentTree.out
 	./Trie.out
 	./UnionFind.out
-	./Util.out
+	./Utils.out
 
 clean:
 	rm *.out
