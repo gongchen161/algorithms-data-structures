@@ -1,54 +1,56 @@
-all: BigNumber Bitmask Dijkstra ExponentialModular FenwickTree GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Utils
+files = BigNumber Bitmask Dijkstra ExponentialModular FenwickTree GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Utils
+all: $(files)
 
 BigNumber: BigNumber.cpp
-	g++ BigNumber.cpp -std=c++17 -o BigNumber.out
+	g++ BigNumber.cpp -std=c++17 -o BigNumber
 
 Bitmask: Bitmask.cpp
-	g++ Bitmask.cpp -std=c++17 -o Bitmask.out
+	g++ Bitmask.cpp -std=c++17 -o Bitmask
 
 Dijkstra: Dijkstra.cpp
-	g++ Dijkstra.cpp -std=c++17 -o Dijkstra.out
+	g++ Dijkstra.cpp -std=c++17 -o Dijkstra
 
 ExponentialModular: ExponentialModular.cpp
-	g++ ExponentialModular.cpp -std=c++17 -o ExponentialModular.out
+	g++ ExponentialModular.cpp -std=c++17 -o ExponentialModular
 
 FenwickTree: FenwickTree.cpp
-	g++ FenwickTree.cpp -std=c++17 -o FenwickTree.out
+	g++ FenwickTree.cpp -std=c++17 -o FenwickTree
 
 GcdAndLcm: GcdAndLcm.cpp
-	g++ GcdAndLcm.cpp -std=c++17 -o GcdAndLcm.out
+	g++ GcdAndLcm.cpp -std=c++17 -o GcdAndLcm
 
 KmpStringMatching: KmpStringMatching.cpp
-	g++ KmpStringMatching.cpp -std=c++17 -o KmpStringMatching.out
+	g++ KmpStringMatching.cpp -std=c++17 -o KmpStringMatching
 
 PrimeNumberOperations: PrimeNumberOperations.cpp
-	g++ PrimeNumberOperations.cpp -std=c++17 -o PrimeNumberOperations.out
+	g++ PrimeNumberOperations.cpp -std=c++17 -o PrimeNumberOperations
 
 SegmentTree: SegmentTree.cpp
-	g++ SegmentTree.cpp -std=c++17 -o SegmentTree.out
+	g++ SegmentTree.cpp -std=c++17 -o SegmentTree
 
 Trie: Trie.cpp
-	g++ Trie.cpp -std=c++17 -o Trie.out
+	g++ Trie.cpp -std=c++17 -o Trie
 
 UnionFind: UnionFind.cpp
-	g++ UnionFind.cpp -std=c++17 -o UnionFind.out
+	g++ UnionFind.cpp -std=c++17 -o UnionFind
 
 Utils: Utils.cpp
-	g++ Utils.cpp -std=c++17 -o Utils.out
+	g++ Utils.cpp -std=c++17 -o Utils
 
 test: 
-	./BigNumber.out
-	./Bitmask.out
-	./Dijkstra.out
-	./ExponentialModular.out
-	./FenwickTree.out
-	./GcdAndLcm.out
-	./KmpStringMatching.out
-	./PrimeNumberOperations.out
-	./SegmentTree.out
-	./Trie.out
-	./UnionFind.out
-	./Utils.out
+	./BigNumber
+	./Bitmask
+	./Dijkstra
+	./ExponentialModular
+	./FenwickTree
+	./GcdAndLcm
+	./KmpStringMatching
+	./PrimeNumberOperations
+	./SegmentTree
+	./Trie
+	./UnionFind
+	./Utils
 
+.PHONY: clean
 clean:
-	rm *.out
+	rm -f *.o $(files)
