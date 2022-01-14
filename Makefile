@@ -1,4 +1,4 @@
-files = BigNumber Bitmask Dijkstra ExponentialModular FenwickTree GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Utils
+files = BigNumber Bitmask Dijkstra ExponentialModular FenwickTree FordFulkersonMaxFlow GcdAndLcm KmpStringMatching PrimeNumberOperations Trie SegmentTree UnionFind Utils
 all: $(files)
 
 BigNumber: BigNumber.cpp
@@ -15,6 +15,9 @@ ExponentialModular: ExponentialModular.cpp
 
 FenwickTree: FenwickTree.cpp
 	g++ FenwickTree.cpp -std=c++17 -o FenwickTree
+
+FordFulkersonMaxFlow: FordFulkersonMaxFlow.cpp
+	g++ FordFulkersonMaxFlow.cpp -std=c++17 -o FordFulkersonMaxFlow
 
 GcdAndLcm: GcdAndLcm.cpp
 	g++ GcdAndLcm.cpp -std=c++17 -o GcdAndLcm
@@ -43,6 +46,7 @@ test:
 	./Dijkstra
 	./ExponentialModular
 	./FenwickTree
+	./FordFulkersonMaxFlow
 	./GcdAndLcm
 	./KmpStringMatching
 	./PrimeNumberOperations
